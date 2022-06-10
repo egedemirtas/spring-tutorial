@@ -52,10 +52,12 @@ Everything I have learned about spring framework
     - Autowiring: process where spring identifies the dependencies, identifies the matches for dependencies, and populates them
     - dependency injection: we are injecting Engine as a dependency to Car (pattern to implemnet IOC)
     - Inversion of control: 
+
         public class flatEngine implements Engine(){}
         public class Car {
             Engine engine = new flatEngine();
         }
+
         - the class which needs a dependency creates an instance of dependency
         - However in Spring, the dependency is instantiated by sprring
         - So we are taking the control from the class which needs dependency and giving the control to framework
@@ -76,3 +78,7 @@ Everything I have learned about spring framework
                 - ApplicationContext
                 (The ApplicationContext interface is built on top of the BeanFactory interface)
 
+-Why Spring is popular?
+    - Enables testable code (because of dependecy injection). Also good integration with Junit and mockito
+    - no plumping code: spring handles most of the exceptions by itself
+    - flexible architecture
