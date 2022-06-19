@@ -92,3 +92,16 @@ Everything I have learned about spring framework
     - Enables testable code (because of dependecy injection). Also good integration with Junit and mockito
     - no plumping code: spring handles most of the exceptions by itself
     - flexible architecture
+
+
+- BEAN scope
+    ```
+    BinarySearchWithSpring binarySearchWithSpring = appContext.getBean(BinarySearchWithSpring.class);
+    BinarySearchWithSpring binarySearchWithSpring1 = appContext.getBean(BinarySearchWithSpring.class);
+    ```
+    - Both of the variables refer to the same object. When you try to get different instances of a bean from context, by default you get the same bean instance. This is called singleton bean (one instance per context)
+    - prototype: new bean instance whenever requested from app context
+    - request & session: one bean per HHTP request/session
+    - Singleton pattern and singleton bean are different:
+        - a singleton in a singleton pattern means a singular/only once instantiated class per JVM
+        - singleton bean is one instance per application context

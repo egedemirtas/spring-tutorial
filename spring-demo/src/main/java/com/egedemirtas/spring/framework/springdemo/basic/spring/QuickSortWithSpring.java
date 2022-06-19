@@ -1,5 +1,7 @@
-package com.egedemirtas.spring.framework.springdemo;
+package com.egedemirtas.spring.framework.springdemo.basic.spring;
 
+import com.egedemirtas.spring.framework.springdemo.basic.SortAlgo;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +10,8 @@ import java.util.List;
 
 @Component
 @Primary // there are 2 components that are autowired. Using this will prioritize this class
-public class QuickSortWithSpring implements SortAlgo{
+@Qualifier("quick")
+public class QuickSortWithSpring implements SortAlgo {
     public List<Integer> sort(List<Integer> numberList) {
         // sort numberList
         numberList.sort(Comparator.naturalOrder()); // assume this is doing bubble sort

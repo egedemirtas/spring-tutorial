@@ -1,9 +1,9 @@
-package com.egedemirtas.spring.framework.springdemo;
+package com.egedemirtas.spring.framework.springdemo.basic;
 
 import java.util.List;
 
 public class BinarySearch {
-    private SortAlgo sortAlgo;
+    private final SortAlgo sortAlgo;
 
     public BinarySearch(SortAlgo sortAlgo) {
         this.sortAlgo = sortAlgo;
