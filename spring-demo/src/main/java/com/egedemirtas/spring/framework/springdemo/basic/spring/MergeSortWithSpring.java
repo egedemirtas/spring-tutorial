@@ -4,14 +4,14 @@ import com.egedemirtas.spring.framework.springdemo.basic.SortAlgo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Comparator;
 import java.util.List;
 
-@Component
+@Service
 @Qualifier("merge")
 public class MergeSortWithSpring implements SortAlgo {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

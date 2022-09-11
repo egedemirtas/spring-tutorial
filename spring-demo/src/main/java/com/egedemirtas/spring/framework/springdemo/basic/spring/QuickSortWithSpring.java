@@ -3,12 +3,12 @@ package com.egedemirtas.spring.framework.springdemo.basic.spring;
 import com.egedemirtas.spring.framework.springdemo.basic.SortAlgo;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
 
-@Component
+@Service
 @Primary // there are 2 components that are autowired. Using this will prioritize this class
 @Qualifier("quick")
 public class QuickSortWithSpring implements SortAlgo {

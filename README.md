@@ -142,3 +142,10 @@ Everything I have learned about spring framework
         - AOPs and 
         - I18N(process of planning and implementing products and services so that they can easily be adapted to specific local languages and cultures, a process called localization) and
         - WebApplicationContext
+
+- Component Annotations
+    - @Component: nonspecific, generic
+    - @Repository: for DB layer specific files (entities, dao)
+    - @Service: service layer, business service facade
+    - @Controller: controller in MVC pattern
+
