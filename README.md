@@ -105,3 +105,14 @@ Everything I have learned about spring framework
     - Singleton pattern and singleton bean are different:
         - a singleton in a singleton pattern means a singular/only once instantiated class per JVM
         - singleton bean is one instance per application context
+
+- CDI 
+    - Java EE Dependency Injection Standard
+    - CDI is an interface that defines how to do dependency injection
+    - @Inject (for @Autowired), @Named(for @component, @qualifier), @Singleton
+    - You need to add a new dependency(javax.inject) in pom.xml to use @Inject, @Named etc
+
+- From SpringBoot to Spring
+    - You need to delete springboot dependencies from pom.xml and add core/context dependencies from spring
+    - You app won't run with @SpringBootApplication, thus you you need to define application configuration with @Configuration
+    - Also spring cannot do component scan autoamtically, thus you need to add @ComponentScan in main file
