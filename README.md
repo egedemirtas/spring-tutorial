@@ -116,3 +116,29 @@ Everything I have learned about spring framework
     - You need to delete springboot dependencies from pom.xml and add core/context dependencies from spring
     - You app won't run with @SpringBootApplication, thus you you need to define application configuration with @Configuration
     - Also spring cannot do component scan autoamtically, thus you need to add @ComponentScan in main file
+
+- Resolving Disambiguation
+    - IOC: 
+        ```
+        // before spring
+        public class Car {
+            Engine engine = new flatEngine(); // control of creating the Engine(dependency of Car) is with the Car(bean). Car decides when/how to create Engine
+        }
+        ```
+        ```
+        // after spring
+        @Component
+        public class flatEngine implements Engine(){}
+        
+        @Component
+        public class Car {
+            @Autowired
+            Engine engine; // the responsibility of when/how to create Engine(dependency) shifted to framework(Spring)
+        }
+        ```
+    - The program/concept which provides/manages IOC is IOC Container. In spring there are 2 implementations of IOC Container: Application Context(recommended by spring), Bean factory(suggested only if memory is scarce).
+    - Application context:
+        - All features provided by Bean Factory and 
+        - AOPs and 
+        - I18N(process of planning and implementing products and services so that they can easily be adapted to specific local languages and cultures, a process called localization) and
+        - WebApplicationContext
